@@ -38,7 +38,7 @@ func setLinux(s *specs.Spec) {
 }
 
 
-func WithDevice(deviceType string, minorId int, majorId int) oci.SpecOpts {
+func WithDevice(deviceType string, majorId int, minorId int) oci.SpecOpts {
 	return func(_ context.Context, _ oci.Client, _ *containers.Container, s *specs.Spec) error {
 		setLinux(s)
 		if s.Linux.Resources == nil {
@@ -50,8 +50,8 @@ func WithDevice(deviceType string, minorId int, majorId int) oci.SpecOpts {
 		s.Linux.Resources.Devices = append(s.Linux.Resources.Devices, []specs.LinuxDeviceCgroup{
 			{
 				Type:   deviceType,
-				Major:  intptr(188),
-				Minor:  intptr(0),
+				Major:  intptr(majorId),
+				Minor:  intptr(minorId),
 				Access: "rwm",
 				Allow:  true,
 			},

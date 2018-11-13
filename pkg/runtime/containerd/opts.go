@@ -31,7 +31,7 @@ func WithEnv(overrides []string) oci.SpecOpts {
 }
 
 // setLinux sets Linux to empty if unset
-func setLinux(s *Spec) {
+func setLinux(s *specs.Spec) {
 	if s.Linux == nil {
 		s.Linux = &specs.Linux{}
 	}
@@ -52,10 +52,10 @@ func WithDevice(deviceType string, minorId int, majorId int) oci.SpecOpts {
 				Type:   deviceType,
 				Major:  intptr(188),
 				Minor:  intptr(0),
-				Access: rwm,
+				Access: "rwm",
 				Allow:  true,
-			}
-		},
+			},
+		}...
 		)
 		return nil
 	}

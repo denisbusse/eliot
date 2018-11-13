@@ -9,6 +9,7 @@ type Container struct {
 	Env        []string `validate:"dive,envKeyValuePair"`
 	WorkingDir string   `validate:"omitempty,gt=0"`
 	Mounts     []Mount  `validate:"dive"`
+	Devices	   []Device `validate:"dive"`
 	Pipe       *PipeSet
 }
 
@@ -33,6 +34,12 @@ type Mount struct {
 	Source      string   `validate:"omitempty,gt=0"`
 	Destination string   `validate:"omitempty,gt=0"`
 	Options     []string `validate:"dive,gt=0"`
+}
+
+type Device struct {
+	deviceType	string
+	majorId		int64
+	minorId		int64
 }
 
 // ContainerStatus represents one container status

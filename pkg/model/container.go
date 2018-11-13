@@ -37,9 +37,9 @@ type Mount struct {
 }
 
 type Device struct {
-	deviceType	string    `validate:"omitempty,gt=0"`
-	majorId		int64     `validate:"omitempty,gt=0"`
-	minorId		int64     `validate:"omitempty,gt=0"`
+	DeviceType	string
+	MajorId		int64
+	MinorId		int64
 }
 
 // ContainerStatus represents one container status

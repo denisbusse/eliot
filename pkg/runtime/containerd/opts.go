@@ -55,7 +55,8 @@ func WithDevice(deviceType string, minorId int, majorId int) oci.SpecOpts {
 				Access: rwm,
 				Allow:  true,
 			}
-		})
+		},
+		)
 		return nil
 	}
 }

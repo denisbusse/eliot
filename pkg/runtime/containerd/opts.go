@@ -38,7 +38,7 @@ func setLinux(s *specs.Spec) {
 }
 
 
-func WithDevice(deviceType string, majorId int, minorId int) oci.SpecOpts {
+func WithDevice(deviceType string, majorId int64, minorId int64) oci.SpecOpts {
 	return func(_ context.Context, _ oci.Client, _ *containers.Container, s *specs.Spec) error {
 		setLinux(s)
 		if s.Linux.Resources == nil {

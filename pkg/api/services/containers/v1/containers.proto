@@ -37,6 +37,13 @@ message Container {
 	repeated string env = 6;
 	repeated Mount mounts = 7;
 	PipeSet pipe = 8;
+	repeated Device devices = 9;
+}
+
+message Device {
+	string deviceType = 1;
+	int majorid = 2;
+	int minorid = 3;
 }
 
 message PipeSet {

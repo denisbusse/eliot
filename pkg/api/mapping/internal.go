@@ -89,7 +89,7 @@ func MapContainersToAPIModel(source []model.Container) (result []*containers.Con
 
 func mapDevicesToAPIModel(devices []model.Device) (result []*containers.Device) {
 	for _, device := range devices {
-		result = append(result, &containers.Mount{
+		result = append(result, &containers.Device{
 			DeviceType:  device.DeviceType,
 			Minorid:     device.MinorId,
 			Majorid:     device.MajorId,

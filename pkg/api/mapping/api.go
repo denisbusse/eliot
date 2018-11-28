@@ -39,7 +39,7 @@ func MapContainerToInternalModel(containers []*containers.Container) (result []m
 			Args:       container.Args,
 			Env:        container.Env,
 			WorkingDir: container.WorkingDir,
-			Devices:	mapDeviceToInternalModel(container.Devices)
+			Devices:	mapDeviceToInternalModel(container.Devices),
 			Mounts:     mapMountsToInternalModel(container.Mounts),
 			Pipe:       mapPipeToInternalModel(container.Pipe),
 		})

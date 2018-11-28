@@ -38,8 +38,8 @@ type Mount struct {
 
 type Device struct {
 	DeviceType	string
-	MajorId		int64
-	MinorId		int64
+	MajorId		uint32
+	MinorId		uint32
 }
 
 // ContainerStatus represents one container status

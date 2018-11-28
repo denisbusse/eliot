@@ -28,7 +28,9 @@ Containers:{{range .Pod.Spec.Containers}}
 		Mounts:{{range .Mounts}}
 			- type={{.Type}},source={{.Source}},destination={{.Destination}},options={{StringsJoin .Options ":"}}
 		{{- end}}
-    {{- if .Pipe}}
+		{{- if .Pipe}}
+		Devices:{{range .Devices}}
+			- type={{.DeviceType}},minor={{.MinorId}},major={{.MajorId}}
 		Pipe:
 			stdout -> stdin: {{.Pipe.Stdout.Stdin.Name}}
 		{{- end}}

@@ -42,8 +42,8 @@ message Container {
 
 message Device {
 	string deviceType = 1;
-	int majorid = 2;
-	int minorid = 3;
+	uint32 majorid = 2;
+	uint32 minorid = 3;
 }
 
 message PipeSet {

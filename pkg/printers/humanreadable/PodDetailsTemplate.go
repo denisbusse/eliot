@@ -31,6 +31,7 @@ Containers:{{range .Pod.Spec.Containers}}
 		{{- if .Pipe}}
 		Devices:{{range .Devices}}
 			- type={{.DeviceType}},minor={{.MinorId}},major={{.MajorId}}
+		{{- end}}
 		Pipe:
 			stdout -> stdin: {{.Pipe.Stdout.Stdin.Name}}
 		{{- end}}

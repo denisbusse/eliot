@@ -77,8 +77,8 @@ func mapDeviceToInternalModel(devices []*containers.Device) (result []model.Devi
 	for _, device := range devices {
 		result = append(result, model.Device{
 			DeviceType:  device.DeviceType,
-			MinorId:     device.MinorId,
-			MajorId:     device.MajorId,
+			MinorId:     device.Minorid,
+			MajorId:     device.Majorid,
 		})
 	}
 	return result

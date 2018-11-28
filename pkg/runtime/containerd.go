@@ -188,7 +188,7 @@ func (c *ContainerdClient) CreateContainer(pod model.Pod, container model.Contai
 	if (len(container.Devices) > 0) {
 		for _, dev := range container.Devices {
 			log.Debugf("Adding device to container...")
-			specOpts = append(specOpts, opts.WithDevice(dev.DeviceType, dev.MajorId, dev.MinorId))
+			specOpts = append(specOpts, opts.WithDevice(dev.DeviceType, int64(dev.MajorId), int64(dev.MinorId)))
 		}
 	}
 	log.Debugf("I am behind devices")

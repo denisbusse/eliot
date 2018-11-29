@@ -157,9 +157,9 @@ func mapDevicesToInternalModel(container containers.Container) (result []model.D
 		return result
 	}
 
-	ptrint32 := func(i *int64) uint32 {
-		return uint32(*i)
-	}
+	//ptrint32 := func(i *int64) uint32 {
+	//	return uint32(*i)
+	//}
 
 	for _, device := range spec.Linux.Resources.Devices {
 		result = append(result, model.Device{

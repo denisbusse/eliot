@@ -29,7 +29,7 @@ Containers:{{range .Pod.Spec.Containers}}
 			- type={{.Type}},source={{.Source}},destination={{.Destination}},options={{StringsJoin .Options ":"}}
 		{{- end}}
 		Devices:{{range .Devices}}
-			- type={{.DeviceType}},minor={{.MinorId}},major={{.MajorId}}
+			- type={{.DeviceType}},minor={{.Minorid}},major={{.Majorid}}
 		{{- end}}
 		{{- if .Pipe}}
 		Pipe:

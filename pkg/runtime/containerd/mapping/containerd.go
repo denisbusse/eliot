@@ -157,7 +157,7 @@ func mapDevicesToInternalModel(container containers.Container) (result []model.D
 		return result
 	}
 
-	ptrint32 := func(int64*) uint32 {
+	ptrint32 := func(i *int64) uint32 {
 		return uint32(*i)
 	}
 
